@@ -1,0 +1,80 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.oguri_cap.idle": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": { "vector": [0, 0, 0] },
+						"1.0": { "vector": [-0.3, 0, 0] },
+						"2.0": { "vector": [0, 0, 0] }
+					}
+				},
+				"ear_right": {
+					"rotation": {
+						"0.0": { "vector": [0, 0, 0] },
+						"1.0": { "vector": [0, 0, 1] },
+						"2.0": { "vector": [0, 0, 0] }
+					}
+				},
+				"ear_left": {
+					"rotation": {
+						"0.0": { "vector": [0, 0, 0] },
+						"1.0": { "vector": [0, 0, -1] },
+						"2.0": { "vector": [0, 0, 0] }
+					}
+				},
+				"right_arm": {
+					"rotation": {
+						"0.0": { "vector": [0, 0, 0] },
+						"1.0": { "vector": [0, 0, -2] },
+						"2.0": { "vector": [0, 0, 0] }
+					}
+				},
+				"left_arm": {
+					"rotation": {
+						"0.0": { "vector": [0, 0, 0] },
+						"1.0": { "vector": [0, 0, 2] },
+						"2.0": { "vector": [0, 0, 0] }
+					}
+				}
+			}
+		},
+		"animation.oguri_cap.run": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"right_arm": {
+					"rotation": {
+						"0.0": { "vector": [30, 0, 0] },
+						"0.25": { "vector": [-30, 0, 0] },
+						"0.5": { "vector": [30, 0, 0] }
+					}
+				},
+				"left_arm": {
+					"rotation": {
+						"0.0": { "vector": [-30, 0, 0] },
+						"0.25": { "vector": [30, 0, 0] },
+						"0.5": { "vector": [-30, 0, 0] }
+					}
+				},
+				"right_leg": {
+					"rotation": {
+						"0.0": { "vector": [-30, 0, 0] },
+						"0.25": { "vector": [30, 0, 0] },
+						"0.5": { "vector": [-30, 0, 0] }
+					}
+				},
+				"left_leg": {
+					"rotation": {
+						"0.0": { "vector": [30, 0, 0] },
+						"0.25": { "vector": [-30, 0, 0] },
+						"0.5": { "vector": [30, 0, 0] }
+					}
+				}
+			}
+		}
+	}
+}
