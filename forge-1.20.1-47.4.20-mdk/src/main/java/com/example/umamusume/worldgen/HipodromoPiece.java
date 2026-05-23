@@ -138,27 +138,6 @@ public class HipodromoPiece extends TemplateStructurePiece {
         templateManager.getOrCreate(TEMPLATE_SE)
                 .placeInWorld(level, origem.offset(48, 0, 48), origem.offset(48, 0, 48), settings, random, 2);
 
-        // PARTE A: Limpeza superior (Ar) - Do nível exato do chão para CIMA
-        for (int x = minX; x <= maxX; x++) {
-            for (int z = minZ; z <= maxZ; z++) {
-                // CORREÇÃO: Começa exatamente no minY (sem o -1) para não destruir o chão
-                for (int y = bounds.minY(); y <= level.getMaxBuildHeight(); y++) {
-                    mutablePos.set(x, y, z);
-                    BlockState state = level.getBlockState(mutablePos);
-                    // Como roda antes da estrutura colar, podemos apagar tudo sem medo
-                    if (!level.getBlockState(mutablePos).isAir()&& !state.is(Blocks.QUARTZ_BLOCK)
-                            && !state.is(Blocks.QUARTZ_PILLAR)
-                            && !state.is(Blocks.SMOOTH_QUARTZ)
-                            && !state.is(Blocks.QUARTZ_STAIRS)
-                            && !state.is(Blocks.IRON_BARS)
-                            && !state.is(Blocks.IRON_BLOCK)
-                            && !state.is(Blocks.GRASS_BLOCK)
-                            && !state.is(Blocks.SANDSTONE)) {
-                        level.setBlock(mutablePos, Blocks.AIR.defaultBlockState(), 2);
-                    }
-                }
-            }
-        }
 
         // SPAWN DAS GAROTAS
         int minY = bounds.minY();
