@@ -72,7 +72,7 @@ public class HipodromoPiece extends TemplateStructurePiece {
         BoundingBox bounds = this.getBoundingBox();
 
         // Expansão do trator mantida (sua ideia genial!)
-        int margemFolhas = 25;
+        int margemFolhas = 6;
         int minX = Math.max(bounds.minX() - margemFolhas, chunkPos.getMinBlockX());
         int maxX = Math.min(bounds.maxX() + margemFolhas, chunkPos.getMaxBlockX());
         int minZ = Math.max(bounds.minZ() - margemFolhas, chunkPos.getMinBlockZ());

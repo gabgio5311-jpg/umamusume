@@ -5,7 +5,9 @@
     "minecraft:sunflower_plains",
     "minecraft:meadow",
     "minecraft:savanna",
-    "minecraft:forest"
+    "minecraft:savanna_plateau",
+    "minecraft:snowy_plains",
+    "minecraft:snowy_slopes"
   ],
   "step": "surface_structures",
   "terrain_adaptation": "none",
