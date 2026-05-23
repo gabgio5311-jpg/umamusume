@@ -3,6 +3,9 @@ package com.example.umamusume.worldgen;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.BlockColumn;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
@@ -20,7 +23,7 @@ public class HipodromoStructure extends Structure {
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
         BlockPos centerPos = context.chunkPos().getMiddleBlockPosition(0);
 
-        // Verifica água em vários pontos
+        // Verifica água e gelo em vários pontos
         for (int dx = -26; dx <= 26; dx += 8) {
             for (int dz = -26; dz <= 26; dz += 8) {
                 int sy = context.chunkGenerator().getFirstOccupiedHeight(
@@ -32,10 +35,19 @@ public class HipodromoStructure extends Structure {
                         Heightmap.Types.OCEAN_FLOOR_WG,
                         context.heightAccessor(), context.randomState());
                 if (sy > fy) return Optional.empty();
+
+                BlockColumn col = context.chunkGenerator().getBaseColumn(
+                        centerPos.getX() + dx, centerPos.getZ() + dz,
+                        context.heightAccessor(), context.randomState());
+                BlockState block = col.getBlock(sy);
+                if (block.is(Blocks.ICE) || block.is(Blocks.PACKED_ICE) ||
+                        block.is(Blocks.BLUE_ICE) || block.is(Blocks.FROSTED_ICE)) {
+                    return Optional.empty();
+                }
             }
         }
 
-        // Verifica bioma em vários pontos da estrutura inteira
+        // Verifica bioma em vários pontos
         var biomeSource = context.chunkGenerator().getBiomeSource();
         var climate = context.randomState().sampler();
         int[] checkX = {0, 26, 52, 0, 52, 0, 26, 52};
@@ -48,7 +60,6 @@ public class HipodromoStructure extends Structure {
                     (centerPos.getZ() + checkZ[i]) >> 2,
                     climate
             );
-            // Cancela se for cherry grove ou ocean
             if (biome.is(net.minecraft.tags.BiomeTags.IS_OCEAN) ||
                     biome.value().equals(context.registryAccess()
                             .registryOrThrow(net.minecraft.core.registries.Registries.BIOME)

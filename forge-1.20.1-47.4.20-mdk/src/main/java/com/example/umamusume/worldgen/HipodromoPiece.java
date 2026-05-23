@@ -138,6 +138,18 @@ public class HipodromoPiece extends TemplateStructurePiece {
         templateManager.getOrCreate(TEMPLATE_SE)
                 .placeInWorld(level, origem.offset(48, 0, 48), origem.offset(48, 0, 48), settings, random, 2);
 
+// Remove neve em cima da estrutura
+        for (int x = Math.max(bounds.minX(), chunkPos.getMinBlockX()); x <= Math.min(bounds.maxX() + 5, chunkPos.getMaxBlockX()); x++) {
+            for (int z = Math.max(bounds.minZ(), chunkPos.getMinBlockZ()); z <= Math.min(bounds.maxZ() + 23, chunkPos.getMaxBlockZ()); z++) {
+                for (int y = bounds.minY(); y <= bounds.maxY() + 2; y++) {
+                    mutablePos.set(x, y, z);
+                    BlockState state = level.getBlockState(mutablePos);
+                    if (state.is(Blocks.SNOW) || state.is(Blocks.SNOW_BLOCK)) {
+                        level.setBlock(mutablePos, Blocks.AIR.defaultBlockState(), 2);
+                    }
+                }
+            }
+        }
 
         // SPAWN DAS GAROTAS
         int minY = bounds.minY();
