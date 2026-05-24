@@ -1,7 +1,6 @@
 package com.example.umamusume.entity;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -12,6 +11,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import software.bernie.geckolib.animatable.GeoEntity;
 
 public abstract class BaseUmaEntity extends PathfinderMob {
 
@@ -37,19 +37,7 @@ public abstract class BaseUmaEntity extends PathfinderMob {
 
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        if (this.level().isClientSide) {
-            if (!player.isShiftKeyDown()) {
-                net.minecraft.client.Minecraft.getInstance().setScreen(
-                        new com.example.umamusume.client.UmaGuiScreen(
-                                getGuiTexture(),
-                                getUmaName(),
-                                getDialogues()
-                        )
-                );
-            }
-            return InteractionResult.SUCCESS;
-        }
-
+        if (this.level().isClientSide) return InteractionResult.SUCCESS;
         if (player.isShiftKeyDown()) {
             following = !following;
             if (following) {
@@ -59,8 +47,7 @@ public abstract class BaseUmaEntity extends PathfinderMob {
             }
             return InteractionResult.SUCCESS;
         }
-
-        return InteractionResult.SUCCESS;
+        return super.mobInteract(player, hand);
     }
 
     @Override
@@ -79,7 +66,6 @@ public abstract class BaseUmaEntity extends PathfinderMob {
         }
     }
 
+    // Cada Uma sobrescreve esse método com seu nome
     protected abstract String getUmaName();
-    protected abstract ResourceLocation getGuiTexture();
-    protected abstract String[] getDialogues();
 }

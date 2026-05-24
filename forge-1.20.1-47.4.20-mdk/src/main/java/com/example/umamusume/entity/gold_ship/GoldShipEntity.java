@@ -33,16 +33,6 @@ public class GoldShipEntity extends BaseUmaEntity implements GeoEntity {
         }));
     }
     @Override
-    protected ResourceLocation getGuiTexture() {
-        return new ResourceLocation(UmaMusumeMod.MOD_ID, "textures/gui/gold_ship.png");
-    }
-    @Override
-    protected String[] getDialogues() {
-        return new String[]{"Olá! Eu sou Gold Ship!",
-                "Vamos correr juntos hoje?",
-                "Até mais!"};
-    }
-    @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }

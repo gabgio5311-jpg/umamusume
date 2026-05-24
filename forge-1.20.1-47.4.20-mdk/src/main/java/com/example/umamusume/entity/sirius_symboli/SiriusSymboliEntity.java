@@ -33,19 +33,6 @@ public class SiriusSymboliEntity extends BaseUmaEntity implements GeoEntity {
         }));
     }
     @Override
-    protected ResourceLocation getGuiTexture() {
-        return new ResourceLocation(UmaMusumeMod.MOD_ID, "textures/gui/sirius_symboli.png");
-    }
-
-    @Override
-    protected String[] getDialogues() {
-        return new String[]{
-                "Olá! Eu sou Sirius Symboli!",
-                "Vamos correr juntos hoje?",
-                "Até mais!"
-        };
-    }
-    @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }

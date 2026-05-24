@@ -33,16 +33,6 @@ public class MamboEntity extends BaseUmaEntity implements GeoEntity {
         }));
     }
     @Override
-    protected ResourceLocation getGuiTexture() {
-        return new ResourceLocation(UmaMusumeMod.MOD_ID, "textures/gui/mambo.png");
-    }
-    @Override
-    protected String[] getDialogues() {
-        return new String[]{"Olá! Eu sou Mambo!",
-                "Vamos correr juntos hoje?",
-                "Até mais!"};
-    }
-    @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }

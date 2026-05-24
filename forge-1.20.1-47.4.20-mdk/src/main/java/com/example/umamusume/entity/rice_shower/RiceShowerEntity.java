@@ -31,16 +31,6 @@ public class RiceShowerEntity extends BaseUmaEntity implements GeoEntity {
         }));
     }
     @Override
-    protected ResourceLocation getGuiTexture() {
-        return new ResourceLocation(UmaMusumeMod.MOD_ID, "textures/gui/rice_shower.png");
-    }
-    @Override
-    protected String[] getDialogues() {
-        return new String[]{"Olá! Eu sou Rice Shower!",
-                "Vamos correr juntos hoje?",
-                "Até mais!"};
-    }
-    @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }

@@ -33,16 +33,6 @@ public class OguriCapEntity extends BaseUmaEntity implements GeoEntity {
         }));
     }
     @Override
-    protected ResourceLocation getGuiTexture() {
-        return new ResourceLocation(UmaMusumeMod.MOD_ID, "textures/gui/oguri_cap.png");
-    }
-    @Override
-    protected String[] getDialogues() {
-        return new String[]{"Olá! Eu sou Oguri Cap!",
-                "Vamos correr juntos hoje?",
-                "Até mais!"};
-    }
-    @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
