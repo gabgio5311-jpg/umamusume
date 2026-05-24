@@ -7,6 +7,7 @@ import com.example.umamusume.entity.rice_shower.RiceShowerEntity;
 import com.example.umamusume.entity.mambo.MamboEntity;
 import com.example.umamusume.entity.gold_ship.GoldShipEntity;
 import com.example.umamusume.entity.agnes_tachyon.AgnesTachyonEntity;
+import com.example.umamusume.entity.mejiro_mcqueen.MejiroMcQueenEntity;
 import com.example.umamusume.worldgen.ModStructures;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,6 +41,7 @@ public class UmaMusumeMod {
         event.put(ModEntities.MAMBO.get(), MamboEntity.createAttributes().build());
         event.put(ModEntities.GOLD_SHIP.get(), GoldShipEntity.createAttributes().build());
         event.put(ModEntities.AGNES_TACHYON.get(), AgnesTachyonEntity.createAttributes().build());
+        event.put(ModEntities.MEJIRO_MCQUEEN.get(), MejiroMcQueenEntity.createAttributes().build());
     }
     public static final org.apache.logging.log4j.Logger LOGGER =
             org.apache.logging.log4j.LogManager.getLogger();

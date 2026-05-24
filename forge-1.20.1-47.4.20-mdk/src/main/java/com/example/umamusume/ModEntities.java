@@ -7,6 +7,7 @@ import com.example.umamusume.entity.rice_shower.RiceShowerEntity;
 import com.example.umamusume.entity.mambo.MamboEntity;
 import com.example.umamusume.entity.gold_ship.GoldShipEntity;
 import com.example.umamusume.entity.agnes_tachyon.AgnesTachyonEntity;
+import com.example.umamusume.entity.mejiro_mcqueen.MejiroMcQueenEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
@@ -54,5 +55,10 @@ public class ModEntities {
                     () -> EntityType.Builder.of(AgnesTachyonEntity::new, MobCategory.CREATURE)
                             .sized(0.6f, 1.8f)
                             .build("agnes_tachyon"));
+    public static final RegistryObject<EntityType<MejiroMcQueenEntity>> MEJIRO_MCQUEEN =
+            ENTITY_TYPES.register("mejiro_mcqueen",
+                    () -> EntityType.Builder.of(MejiroMcQueenEntity::new, MobCategory.CREATURE)
+                            .sized(0.6f, 1.8f)
+                            .build("mejiro_mcqueen"));
 }
 

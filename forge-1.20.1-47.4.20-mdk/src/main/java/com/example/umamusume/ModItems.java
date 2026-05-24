@@ -39,4 +39,8 @@ public class ModItems {
             ITEMS.register("agnes_tachyon_spawn_egg",
                     () -> new ForgeSpawnEggItem(ModEntities.GOLD_SHIP, 0xff0002, 0xcfd5d6,
                             new Item.Properties()));
+    public static final RegistryObject<Item> mejiro_mcqueen_spawn_egg =
+            ITEMS.register("mejiro_mcqueen_spawn_egg",
+                    () -> new ForgeSpawnEggItem(ModEntities.MEJIRO_MCQUEEN, 0xff0002, 0xcfd5d6,
+                            new Item.Properties()));
 }
