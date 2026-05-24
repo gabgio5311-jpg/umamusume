@@ -6,6 +6,7 @@ import com.example.umamusume.entity.tamamo_cross.TamamoCrossEntity;
 import com.example.umamusume.entity.rice_shower.RiceShowerEntity;
 import com.example.umamusume.entity.mambo.MamboEntity;
 import com.example.umamusume.entity.gold_ship.GoldShipEntity;
+import com.example.umamusume.entity.agnes_tachyon.AgnesTachyonEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
@@ -48,5 +49,10 @@ public class ModEntities {
                     () -> EntityType.Builder.of(GoldShipEntity::new, MobCategory.CREATURE)
                             .sized(0.6f, 1.8f)
                             .build("gold_ship"));
+    public static final RegistryObject<EntityType<AgnesTachyonEntity>> AGNES_TACHYON =
+            ENTITY_TYPES.register("agnes_tachyon",
+                    () -> EntityType.Builder.of(AgnesTachyonEntity::new, MobCategory.CREATURE)
+                            .sized(0.6f, 1.8f)
+                            .build("agnes_tachyon"));
 }
 

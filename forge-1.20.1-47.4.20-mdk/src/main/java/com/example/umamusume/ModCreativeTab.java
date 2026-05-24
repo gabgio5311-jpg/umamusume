@@ -22,6 +22,7 @@ public class ModCreativeTab {
                         output.accept(ModItems.rice_shower_spawn_egg.get());
                         output.accept(ModItems.mambo_spawn_egg.get());
                         output.accept(ModItems.gold_ship_spawn_egg.get());
+                        output.accept(ModItems.agnes_tachyon_spawn_egg.get());
                     })
                     .build());
 }
