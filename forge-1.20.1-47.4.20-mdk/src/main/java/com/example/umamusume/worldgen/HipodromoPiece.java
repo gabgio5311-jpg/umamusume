@@ -165,7 +165,8 @@ public class HipodromoPiece extends TemplateStructurePiece {
                     ModEntities.TAMAMO_CROSS.get(),
                     ModEntities.RICE_SHOWER.get(),
                     ModEntities.MAMBO.get(),
-                    ModEntities.GOLD_SHIP.get()
+                    ModEntities.GOLD_SHIP.get(),
+                    ModEntities.AGNES_TACHYON.get()
             );
 
             int offsetX = 0;
