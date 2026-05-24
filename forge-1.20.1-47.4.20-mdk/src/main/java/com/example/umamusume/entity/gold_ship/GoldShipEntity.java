@@ -1,6 +1,8 @@
 package com.example.umamusume.entity.gold_ship;
 
+import com.example.umamusume.UmaMusumeMod;
 import com.example.umamusume.entity.BaseUmaEntity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.level.Level;
@@ -30,7 +32,16 @@ public class GoldShipEntity extends BaseUmaEntity implements GeoEntity {
             return state.setAndContinue(RawAnimation.begin().thenLoop("gold_ship.animation.idle"));
         }));
     }
-
+    @Override
+    protected ResourceLocation getGuiTexture() {
+        return new ResourceLocation(UmaMusumeMod.MOD_ID, "textures/gui/gold_ship.png");
+    }
+    @Override
+    protected String[] getDialogues() {
+        return new String[]{"Olá! Eu sou Gold Ship!",
+                "Vamos correr juntos hoje?",
+                "Até mais!"};
+    }
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
