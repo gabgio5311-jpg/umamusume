@@ -8,6 +8,7 @@ import com.example.umamusume.entity.mambo.MamboEntity;
 import com.example.umamusume.entity.gold_ship.GoldShipEntity;
 import com.example.umamusume.entity.agnes_tachyon.AgnesTachyonEntity;
 import com.example.umamusume.entity.mejiro_mcqueen.MejiroMcQueenEntity;
+import com.example.umamusume.entity.silence_suzuka.SilenceSuzukaEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
@@ -29,7 +30,6 @@ public class ModEntities {
                     () -> EntityType.Builder.of(OguriCapEntity::new, MobCategory.CREATURE)
                             .sized(0.6f, 1.8f)
                             .build("oguri_cap"));
-
     public static final RegistryObject<EntityType<TamamoCrossEntity>> TAMAMO_CROSS =
             ENTITY_TYPES.register("tamamo_cross",
                     () -> EntityType.Builder.of(TamamoCrossEntity::new, MobCategory.CREATURE)
@@ -60,5 +60,10 @@ public class ModEntities {
                     () -> EntityType.Builder.of(MejiroMcQueenEntity::new, MobCategory.CREATURE)
                             .sized(0.6f, 1.8f)
                             .build("mejiro_mcqueen"));
+     public static final RegistryObject<EntityType<SilenceSuzukaEntity>> SILENCE_SUZUKA =
+                ENTITY_TYPES.register("silence_suzuka",
+                       () -> EntityType.Builder.of(SilenceSuzukaEntity::new, MobCategory.CREATURE)
+                              .sized(0.6f, 1.8f)
+                               .build("silence_suzuka"));
 }
 

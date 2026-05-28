@@ -8,6 +8,7 @@ import com.example.umamusume.entity.mambo.MamboRenderer;
 import com.example.umamusume.entity.gold_ship.GoldShipRenderer;
 import com.example.umamusume.entity.agnes_tachyon.AgnesTachyonRenderer;
 import com.example.umamusume.entity.mejiro_mcqueen.MejiroMcQueenRenderer;
+import com.example.umamusume.entity.silence_suzuka.SilenceSuzukaRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,5 +27,6 @@ public class ClientSetup {
         event.registerEntityRenderer(ModEntities.GOLD_SHIP.get(), GoldShipRenderer::new);
         event.registerEntityRenderer(ModEntities.AGNES_TACHYON.get(), AgnesTachyonRenderer::new);
         event.registerEntityRenderer(ModEntities.MEJIRO_MCQUEEN.get(), MejiroMcQueenRenderer::new);
+        event.registerEntityRenderer(ModEntities.SILENCE_SUZUKA.get(), SilenceSuzukaRenderer::new);
     }
 }

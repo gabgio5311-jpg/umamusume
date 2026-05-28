@@ -43,4 +43,8 @@ public class ModItems {
             ITEMS.register("mejiro_mcqueen_spawn_egg",
                     () -> new ForgeSpawnEggItem(ModEntities.MEJIRO_MCQUEEN, 0xff0002, 0xcfd5d6,
                             new Item.Properties()));
+    public static final RegistryObject<Item> silence_suzuka_spawn_egg =
+            ITEMS.register("silence_suzuka_spawn_egg",
+                    () -> new ForgeSpawnEggItem(ModEntities.SILENCE_SUZUKA, 0xff0002, 0xcfd5d6,
+                            new Item.Properties()));
 }
