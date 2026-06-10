@@ -21,8 +21,8 @@ public class UmaMusumeMod {
 
     public static final String MOD_ID = "umamusume";
 
-    public UmaMusumeMod() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+    public UmaMusumeMod(FMLJavaModLoadingContext context) {
+        IEventBus bus = context.getModEventBus();
 
         GeckoLib.initialize();
 

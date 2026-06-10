@@ -63,7 +63,7 @@ public class HipodromoStructure extends Structure {
             if (biome.is(net.minecraft.tags.BiomeTags.IS_OCEAN) ||
                     biome.value().equals(context.registryAccess()
                             .registryOrThrow(net.minecraft.core.registries.Registries.BIOME)
-                            .get(new ResourceLocation("minecraft", "cherry_grove")))) {
+                            .get(ResourceLocation.fromNamespaceAndPath("minecraft", "cherry_grove")))) {
                 return Optional.empty();
             }
         }

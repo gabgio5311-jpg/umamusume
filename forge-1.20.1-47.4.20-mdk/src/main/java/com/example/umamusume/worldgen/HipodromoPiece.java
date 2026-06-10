@@ -19,10 +19,10 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 
 public class HipodromoPiece extends TemplateStructurePiece {
 
-    private static final ResourceLocation TEMPLATE_IE = new ResourceLocation(UmaMusumeMod.MOD_ID, "hipodromoie");
-    private static final ResourceLocation TEMPLATE_ID = new ResourceLocation(UmaMusumeMod.MOD_ID, "hipodromoid");
-    private static final ResourceLocation TEMPLATE_SE = new ResourceLocation(UmaMusumeMod.MOD_ID, "hipodromose");
-    private static final ResourceLocation TEMPLATE_SD = new ResourceLocation(UmaMusumeMod.MOD_ID, "hipodromosd");
+    private static final ResourceLocation TEMPLATE_IE = ResourceLocation.fromNamespaceAndPath(UmaMusumeMod.MOD_ID, "hipodromoie");
+    private static final ResourceLocation TEMPLATE_ID = ResourceLocation.fromNamespaceAndPath(UmaMusumeMod.MOD_ID, "hipodromoid");
+    private static final ResourceLocation TEMPLATE_SE = ResourceLocation.fromNamespaceAndPath(UmaMusumeMod.MOD_ID, "hipodromose");
+    private static final ResourceLocation TEMPLATE_SD = ResourceLocation.fromNamespaceAndPath(UmaMusumeMod.MOD_ID, "hipodromosd");
 
     private final StructureTemplateManager templateManager;
 
@@ -166,7 +166,9 @@ public class HipodromoPiece extends TemplateStructurePiece {
                     ModEntities.RICE_SHOWER.get(),
                     ModEntities.MAMBO.get(),
                     ModEntities.GOLD_SHIP.get(),
-                    ModEntities.AGNES_TACHYON.get()
+                    ModEntities.AGNES_TACHYON.get(),
+                    ModEntities.MEJIRO_MCQUEEN.get(),
+                    ModEntities.SILENCE_SUZUKA.get()
             );
 
             int offsetX = 0;
