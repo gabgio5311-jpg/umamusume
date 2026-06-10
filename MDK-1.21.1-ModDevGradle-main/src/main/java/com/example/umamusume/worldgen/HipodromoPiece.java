@@ -166,19 +166,28 @@ public class HipodromoPiece extends TemplateStructurePiece {
                     ModEntities.RICE_SHOWER.get(),
                     ModEntities.MAMBO.get(),
                     ModEntities.GOLD_SHIP.get(),
-                    ModEntities.AGNES_TACHYON.get()
+                    ModEntities.AGNES_TACHYON.get(),
+                    ModEntities.SILENCE_SUZUKA.get()
             );
 
-            int offsetX = 0;
+            // Distribui as umas numa grade 4x2 centrada no ponto central (em vez de uma linha reta)
+            int colunas = 4;
+            double espacamento = 2.0;
+            int indice = 0;
             for (net.minecraft.world.entity.EntityType<?> entityType : umas) {
                 net.minecraft.world.entity.Entity entity = entityType.create(level.getLevel());
                 if (entity != null) {
-                    entity.moveTo(spawnPos.getX() + offsetX + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, 0, 0);
+                    int coluna = indice % colunas;
+                    int linha = indice / colunas;
+                    // Centraliza: colunas em torno de (colunas-1)/2, linhas em torno do meio
+                    double deslocX = (coluna - (colunas - 1) / 2.0) * espacamento;
+                    double deslocZ = (linha - 0.5) * espacamento;
+                    entity.moveTo(spawnPos.getX() + 0.5 + deslocX, spawnPos.getY(), spawnPos.getZ() + 0.5 + deslocZ, 0, 0);
                     if (entity instanceof net.minecraft.world.entity.Mob mob) {
                         mob.setPersistenceRequired();
                     }
                     level.addFreshEntity(entity);
-                    offsetX += 3;
+                    indice++;
                 }
             }
         }

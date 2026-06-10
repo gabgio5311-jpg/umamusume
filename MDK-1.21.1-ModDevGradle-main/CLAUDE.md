@@ -79,12 +79,19 @@ these is the usual cause of a crash or invisible/un-spawnable mob.
 ### Worldgen — Hipódromo structure
 
 The racetrack is a single logical structure assembled from **four NBT template quadrants**
-(`hipodromoid/ie/sd/se` under `data/umamusume/structures/`), stitched together in code rather than
+(`hipodromoid/ie/sd/se` under `data/umamusume/structure/`), stitched together in code rather than
 via a jigsaw. `HipodromoStructure.findGenerationPoint` rejects ocean/cherry-grove biomes and
 ice/water columns before placing; `HipodromoPiece.postProcess` clears air above, lays a dirt
 foundation below, places the four quadrants at fixed offsets, strips snow, and spawns one of each
-Uma at the center. Placement rules live in `data/umamusume/worldgen/structure/hipodromo.json` and
-`structure_set/hipodromo_set.json`.
+Uma at the center (in a centered 4×2 grid, not a straight line). Placement rules live in
+`data/umamusume/worldgen/structure/hipodromo.json` and `structure_set/hipodromo_set.json`.
+
+> **Gotcha (1.21.1):** the NBT template folder MUST be `structure/` (singular), not `structures/`.
+> In 1.21 `StructureTemplateManager`'s resource lister is `new FileToIdConverter("structure", ".nbt")`,
+> so templates load from `data/<ns>/structure/*.nbt`. If they sit in the old 1.20.1 `structures/`
+> (plural) folder, `templateManager.getOrCreate(...)` silently returns an **empty** template (no error
+> logged) and `placeInWorld` places nothing — but the manual terrain-clearing and Uma-spawning in
+> `postProcess` still run, so the symptom is "ground cleared + Umas spawned but no racetrack built".
 
 `HipodromoStructure.CODEC` is a `MapCodec` (not a plain `Codec`) because `StructureType.codec()`
 returns `MapCodec` in 1.21.1, and `HipodromoStructure.HIPODROMO_TYPE`/`HIPODROMO_PIECE` are
