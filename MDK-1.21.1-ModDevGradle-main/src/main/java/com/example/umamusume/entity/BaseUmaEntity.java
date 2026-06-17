@@ -66,6 +66,7 @@ public abstract class BaseUmaEntity extends PathfinderMob {
         }
     }
 
+
     // Cada Uma sobrescreve esse método com seu nome
     protected abstract String getUmaName();
 }

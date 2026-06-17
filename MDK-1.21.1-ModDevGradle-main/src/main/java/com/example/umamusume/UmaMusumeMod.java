@@ -4,7 +4,6 @@ package com.example.umamusume;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-
 // Suas importações de entidades continuam iguais...
 import com.example.umamusume.entity.sirius_symboli.SiriusSymboliEntity;
 import com.example.umamusume.entity.oguri_cap.OguriCapEntity;
@@ -16,7 +15,6 @@ import com.example.umamusume.entity.agnes_tachyon.AgnesTachyonEntity;
 import com.example.umamusume.entity.mejiro_mcqueen.MejiroMcQueenEntity;
 import com.example.umamusume.entity.silence_suzuka.SilenceSuzukaEntity;
 import com.example.umamusume.worldgen.ModStructures;
-import software.bernie.geckolib.GeckoLib;
 
 @Mod(UmaMusumeMod.MOD_ID)
 public class UmaMusumeMod {
@@ -36,6 +34,7 @@ public class UmaMusumeMod {
         ModCreativeTab.CREATIVE_TABS.register(bus);
         ModStructures.STRUCTURE_TYPES.register(bus);
         ModStructures.STRUCTURE_PIECE_TYPES.register(bus);
+        ModSounds.SOUNDS.register(bus);
     }
 
     private void registerAttributes(EntityAttributeCreationEvent event) {
